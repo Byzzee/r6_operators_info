@@ -44,7 +44,9 @@ class _HomePageState extends State<HomePage> {
                                           }
                                           else {
                                           if (snapshot.hasData) {
-                                            return GridView.count(childAspectRatio: 260/500,
+                                            return GridView.count(childAspectRatio: 250/500,
+                                                mainAxisSpacing: 8.0,
+                                                crossAxisSpacing: 8.0,
                                                 crossAxisCount: 4,
                                                 scrollDirection: Axis.vertical,
                                                 children: snapshot.data);
