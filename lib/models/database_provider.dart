@@ -35,11 +35,9 @@ Future<dynamic> getDataFromDatabase() async {
 Future<dynamic> getStructuredData() async {
   List<Map> records = await getDataFromDatabase();
 
-  List<String> names = <String>[];
   List<Widget> cards = <Widget>[];
 
-  records.forEach((element) => names.add(element['name']));
-  names.forEach((element) => cards.add(OperatorCard(element)));
+  records.forEach((element) => cards.add(OperatorCard(element)));
 
   return cards;
 }
