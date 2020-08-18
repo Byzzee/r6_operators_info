@@ -15,15 +15,13 @@ class MyApp extends StatelessWidget with PortraitModeMixin {
     return MaterialApp(
       title: 'R6 Operators',
       theme: appTheme,
-      home: HomePage(titleImage: Image.asset('res/R6_Logo.png', fit: BoxFit.contain,)),
+      home: HomePage(),
     );
   }
 }
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key, this.titleImage}) : super(key: key);
-
-  final Image titleImage;
+  HomePage({Key key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -34,13 +32,13 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Padding(padding: EdgeInsets.all(78.0), child: widget.titleImage),
+          title: Padding(padding: EdgeInsets.all(78.0), child: Image.asset('res/R6_Logo.png', fit: BoxFit.contain)),
         ),
         body: Container(margin: EdgeInsets.all(8.0),
             child: FutureBuilder(future: getStructuredData(),
                                           builder: (context, snapshot) {
                                           if (snapshot.hasError) {
-                                            return Center(child: Text('Возникла ошибка', style: appTheme.textTheme.headline2));
+                                            return Center(child: Text('Возникла ошибка', style: appTheme.textTheme.overline));
                                           }
                                           else {
                                           if (snapshot.hasData) {
