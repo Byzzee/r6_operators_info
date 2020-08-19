@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:r6_operators_info/settings/themes.dart';
 import 'package:r6_operators_info/widgets/circular_rating_bar.dart';
 import 'package:r6_operators_info/widgets/information_card.dart';
+import 'package:r6_operators_info/widgets/two_line_information_card.dart';
 
 
 class OperatorPage extends StatefulWidget {
@@ -25,7 +26,10 @@ class _OperatorPageState extends State<OperatorPage> {
     final String _flag = _data['flag'];
     final bool _isattacker = _data['isattacker'] == 1;
     final int _armor = _data['armor'];
-    final int _speed =_data['speed'];
+    final int _speed = _data['speed'];
+    final String _realname = _data['realname'];
+    final String _dateofbirth = _data['dateofbirth'];
+    final String _placeofbirth = _data['placeofbirth'];
 
     final String _flagPath = 'res/CountryFlags/$_flag.png';
     final String _iconPath = 'res/OperatorsData/$_name/Icon.png';
@@ -39,8 +43,9 @@ class _OperatorPageState extends State<OperatorPage> {
       appBar: AppBar(title: Text(_name.toUpperCase(), style: appTheme.textTheme.headline2),
                      centerTitle: true,
                      ),
-      body: Column(children: <Widget>[
-        InformationCard(
+      body: ListView(
+        children: <Widget>[
+          InformationCard(
             child: Padding(padding: EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
                            child: Stack(
                              alignment: AlignmentDirectional.topStart,
@@ -56,7 +61,7 @@ class _OperatorPageState extends State<OperatorPage> {
                                    Column(crossAxisAlignment: CrossAxisAlignment.end,
                                           children: <Widget>[
                                             Opacity(
-                                              opacity: 0.4,
+                                              opacity: 0.3,
                                               child: Text(_division, style: appTheme.textTheme.subtitle1)
                                             ),
                                             Padding(
@@ -153,7 +158,24 @@ class _OperatorPageState extends State<OperatorPage> {
                   ]
               )
           )
-        )
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            TwoLineInformationCard(
+                topText: 'Real Name',
+                bottomText: _realname
+            ),
+            TwoLineInformationCard(
+                topText: 'Date of Birth',
+                bottomText: _dateofbirth
+            ),
+            TwoLineInformationCard(
+                topText: 'Place of Birth',
+                bottomText: _placeofbirth
+            )
+          ]
+        ),
       ])
     );
   }
