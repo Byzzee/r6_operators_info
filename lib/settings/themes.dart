@@ -10,10 +10,11 @@ final ThemeData appTheme = ThemeData(
   textTheme: TextTheme(
     headline1: TextStyle(color: Colors.white, fontSize: 10.0, fontWeight: FontWeight.bold),
     headline2: TextStyle(color: Colors.white, fontSize: 16.0, fontWeight: FontWeight.bold),
+    headline4: TextStyle(color: Colors.white, fontSize: 18.0),
+    headline5: TextStyle(color: Colors.white, fontSize: 24.0),
     headline6: TextStyle(color: Colors.white, fontSize: 32.0),
     overline: TextStyle(color: Colors.red, fontSize: 14.0, fontWeight: FontWeight.bold),
     subtitle1: TextStyle(color: Colors.white, fontSize: 12.0),
     subtitle2: TextStyle(color: Colors.white, fontSize: 16.0),
-
   )
 );

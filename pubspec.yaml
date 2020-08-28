@@ -51,13 +51,23 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    # Лого игры
     - res/R6_Logo.png
+    # Иконки атакующих и защитников
     - res/AttackerIcon.png
     - res/DefenderIcon.png
+    # Уменьшенные версии иконок сверху без обводки
     - res/MiniAttackerIcon.png
     - res/MiniDefenderIcon.png
+    # Флаги стран оперативников
     - res/CountryFlags/
+    # База данных со всей нужной информацией о оперативниках
     - res/operators_database.db
+    # Ассеты снаряжения оперативников
+    - res/Loadout/Ability/
+    - res/Loadout/Gadget/
+    - res/Loadout/Primary/
+    - res/Loadout/Secondary/
     # Nighthaven / ITF (Steel Wave)
     - res/OperatorsData/Ace/
     - res/OperatorsData/Melusi/
