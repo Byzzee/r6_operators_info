@@ -34,6 +34,11 @@ class _OperatorPageState extends State<OperatorPage> {
     final String _dateofbirth = _data['dateofbirth'];
     final String _placeofbirth = _data['placeofbirth'];
 
+    final List<String> _primaryWeapon = _data['primary'].split(';');
+    final List<String> _secondaryWeapon = _data['secondary'].split(';');
+    final List<String> _gadget = _data['gadget'].split(';');
+    final List<String> _uniqueAbility = _data['ability'].split(';');
+
     final String _flagPath = 'res/CountryFlags/$_flag.png';
     final String _fullPhotoPath = 'res/OperatorsData/$_name/FullPhoto.png';
 
@@ -74,29 +79,19 @@ class _OperatorPageState extends State<OperatorPage> {
           ),
           LoadoutBlockCard(
             type: LoadoutElementType.primary,
-            elements: [
-              'AK-12',
-              'M1014'
-            ]
+            elements: _primaryWeapon
           ),
           LoadoutBlockCard(
               type: LoadoutElementType.secondary,
-              elements: [
-                'P9'
-              ]
+              elements: _secondaryWeapon
           ),
           LoadoutBlockCard(
               type: LoadoutElementType.gadget,
-              elements: [
-                'Breach Charge',
-                'Smoke Grenade'
-              ]
+              elements: _gadget
           ),
           LoadoutBlockCard(
               type: LoadoutElementType.ability,
-              elements: [
-                'S.E.L.M.A. Aqua Breacher'
-              ]
+              elements: _uniqueAbility
           )
       ])
     );

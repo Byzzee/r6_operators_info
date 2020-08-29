@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:path/path.dart';
 import 'dart:typed_data';
 import 'package:flutter/services.dart';
+import 'package:r6_operators_info/widgets/app_info_card.dart';
 import 'package:r6_operators_info/widgets/operators_card.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -35,7 +36,7 @@ Future<dynamic> getDataFromDatabase() async {
 Future<dynamic> getStructuredData() async {
   List<Map> records = await getDataFromDatabase();
 
-  List<Widget> cards = <Widget>[];
+  List<Widget> cards = <Widget>[AppInfoCard()];
 
   records.forEach((element) => cards.add(OperatorCard(element)));
 

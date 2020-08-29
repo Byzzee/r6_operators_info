@@ -68,6 +68,8 @@ flutter:
     - res/Loadout/Gadget/
     - res/Loadout/Primary/
     - res/Loadout/Secondary/
+    # ROS (Shadow Legacy)
+    - res/OperatorsData/Zero/
     # Nighthaven / ITF (Steel Wave)
     - res/OperatorsData/Ace/
     - res/OperatorsData/Melusi/

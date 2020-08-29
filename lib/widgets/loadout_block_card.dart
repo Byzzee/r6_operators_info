@@ -78,6 +78,7 @@ class _LoadoutBlockCardState extends State<LoadoutBlockCard> {
                             crossAxisCount: 2,
                             childAspectRatio: 2,
                             shrinkWrap: true,
+                            primary: false,
                             children: _elementCards
                         );
                       }
